@@ -3,6 +3,7 @@ public class Array2line {
         int [][] arr1= {
                 {1,8,3},
                 {4,5,6},
+                {8,9,0}
         };
         int k= getMax(arr1);
         System.out.println(k);
@@ -10,7 +11,10 @@ public class Array2line {
         System.out.println(k);
         k=getSum(arr1, 1);
         System.out.println(k);
-
+        k=getSum2(arr1);
+        System.out.println(k);
+        k=getSum3(arr1);
+        System.out.println(k);
     }
 
     public static int getMax(int[][]arr){
@@ -42,6 +46,30 @@ public class Array2line {
         for (int i = 0; i <arr.length ; i++) {
             for (int j = 0; j <arr[i].length ; j++) {
                 if( j== colume){
+                    sum +=arr[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+    public static int getSum2(int[][] arr){
+        int sum=0;
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j <arr[i].length ; j++) {
+                if( j== i){
+                    sum +=arr[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+    public static int getSum3(int[][] arr){
+        int sum=0;
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if( j== arr.length-1-i){
                     sum +=arr[i][j];
                 }
             }
