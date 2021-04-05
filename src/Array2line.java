@@ -6,6 +6,11 @@ public class Array2line {
         };
         int k= getMax(arr1);
         System.out.println(k);
+        k=getMin(arr1);
+        System.out.println(k);
+        k=getSum(arr1, 1);
+        System.out.println(k);
+
     }
 
     public static int getMax(int[][]arr){
@@ -20,4 +25,29 @@ public class Array2line {
 
         return max;
     }
+    public static int getMin(int[][]arr){
+        int min = arr[0][0];
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j <arr[i].length ; j++) {
+                if(arr[i][j]< min){
+                    min=arr[i][j];
+                }
+            }
+        }
+
+        return min;
+    }
+    public static int getSum(int[][] arr, int colume){
+        int sum=0;
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = 0; j <arr[i].length ; j++) {
+                if( j== colume){
+                    sum +=arr[i][j];
+                }
+            }
+        }
+
+        return sum;
+    }
+
 }
